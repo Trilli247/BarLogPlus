@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GPSBarLog</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>GPSBarLog – Lager & Inventur</h1>
+  </header>
+
+  <main>
+    <form id="loginForm">
+      <h2>Login</h2>
+      <input type="text" id="barleiter" placeholder="Barleiter-Name" required />
+      <input type="text" id="barname" placeholder="Barname" required />
+      <input type="password" id="pin" placeholder="PIN (4-stellig)" required />
+      <input type="datetime-local" id="zeitpunkt" required />
+      <button type="submit">Login</button>
+    </form>
+
+    <section id="inventorySection" style="display:none;">
+      <h2>Inventur</h2>
+      <div id="productInputs"></div>
+      <button onclick="saveData()">Daten speichern</button>
+      <button onclick="exportCSV()">Excel Export</button>
+      <button onclick="exportPDF()">PDF Export</button>
+      <button onclick="mailtoSend()">Per E-Mail senden</button>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
